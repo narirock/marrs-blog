@@ -15,7 +15,7 @@ class CreatePostsTable extends Migration
     {
         Schema::create('blog_posts', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('author_id');
+            $table->integer('author_id')->nullable();
             $table->integer('category_id')->nullable();
             $table->string('title')->nullable();
             $table->string('seo_title')->nullable();
@@ -41,6 +41,6 @@ class CreatePostsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('posts');
+        Schema::dropIfExists('blog_posts');
     }
 }

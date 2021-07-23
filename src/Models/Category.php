@@ -28,22 +28,22 @@ class Category extends Model
         parent::boot();
 
         static::creating(function ($model) {
-            $model->author_id = auth()->user()->id;
+            $model->author_id = auth()->check() ? auth()->user()->id : null;
         });
 
         static::deleting(function ($model) {
-            $model->excluder_id = auth()->user()->id;
+            $model->excluder_id = auth()->check() ? auth()->user()->id : null;
             $model->save();
         });
     }
 
     public function category()
     {
-        return $this->belongsTo("App\Models\Category");
+        return $this->belongsTo("Marrs\MarrsBlog\Models\Category");
     }
 
     public function posts()
     {
-        return $this->hasMany("App\Models\Post");
+        return $this->hasMany("Marrs\MarrsBlog\Models\Post");
     }
 }

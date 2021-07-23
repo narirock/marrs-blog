@@ -63,17 +63,17 @@ class PostController extends Controller
         $order = $request->order ? $request->order : 'created_at';
 
         $status = $this->status;
-        return view('admin.cruds.posts.index', compact('posts', 'status', 'show', 'term', 'order'));
+        return view('marrs-blog::admin.cruds.posts.index', compact('posts', 'status', 'show', 'term', 'order'));
 
         //$posts = $this->post->all();
-        //return view('admin.cruds.posts.index', compact('posts'));
+        //return view('marrs-blog::admin.cruds.posts.index', compact('posts'));
     }
 
     public function create()
     {
         $categories = $this->category->pluck("name", "id");
         $status = $this->status;
-        return view('admin.cruds.posts.create', compact('categories', 'status'));
+        return view('marrs-blog::admin.cruds.posts.create', compact('categories', 'status'));
     }
 
     public function store(Request $request)
@@ -95,11 +95,11 @@ class PostController extends Controller
             "meta_description" => $request->meta_description,
             "meta_keywords" => $request->meta_keywords,
             "seo_title" => $request->seo_title,
-            "image"     => $destaque
+            "image"     => @$destaque
 
         ]);
 
-        return redirect()->route('posts.index');
+        return redirect()->route('admin.blog.posts.index');
     }
 
     public function edit($id)
@@ -109,7 +109,7 @@ class PostController extends Controller
         $categories = $this->category->pluck("name", "id");
         $status = $this->status;
 
-        return view('admin.cruds.posts.edit', compact('post', 'categories', 'status'));
+        return view('marrs-blog::admin.cruds.posts.edit', compact('post', 'categories', 'status'));
     }
 
     public function update($id, Request $request)
@@ -135,7 +135,7 @@ class PostController extends Controller
             $post->save();
         }
 
-        return redirect()->route('posts.index');
+        return redirect()->route('admin.blog.posts.index');
     }
 
     public function destroy($id)

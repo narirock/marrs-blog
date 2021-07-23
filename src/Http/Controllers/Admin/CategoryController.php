@@ -70,7 +70,7 @@ class CategoryController extends Controller
             ]);
         }
 
-        return redirect()->route('categories.index');
+        return redirect()->route('admin.blog.categories.index');
     }
 
     /**
@@ -120,7 +120,7 @@ class CategoryController extends Controller
             ]);
         }
 
-        return redirect()->route('categories.index');
+        return redirect()->route('admin.blog.categories.index');
     }
 
     /**
@@ -130,7 +130,7 @@ class CategoryController extends Controller
     public function destroy($id)
     {
         $this->category->find($id)->delete();
-        return redirect()->route('categories.index');
+        return redirect()->route('admin.blog.categories.index');
     }
 
     public function listnotself($id = null)

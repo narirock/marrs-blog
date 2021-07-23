@@ -60,7 +60,7 @@
 
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-12">
-                        {{-- <x-posts.categories-widget /> --}}
+                        <x-marrs-blog-categories-widget />
                     </div>
 
                 </div>

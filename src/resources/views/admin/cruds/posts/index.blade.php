@@ -47,7 +47,7 @@
                     @foreach ($posts as $post)
                         <tr>
                             <td>{{ $post->title }}</td>
-                            <td>{{ $post->created_at->format('d/m/Y H:i') }}</td>
+                            <td>{{ Carbon\Carbon::parse($post->created_at)->format('d/m/Y H:i') }}</td>
                             <td>
                                 <a href="{{ route('admin.blog.posts.edit', $post->id) }}"
                                     class="btn btn-info btn-sm">Editar</a>
@@ -80,7 +80,7 @@
                 </tbody>
             </table>
 
-            {{ $posts->appends(request()->query())->links('admin.layouts.components.paginator') }}
+            {{-- $posts->appends(request()->query())->links('marrs-blog::admin.layouts.components.paginator') --}}
         </div>
     </div>
 @endsection
