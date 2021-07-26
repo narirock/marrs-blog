@@ -1,4 +1,4 @@
-@extends('marrs-blog::admin.layouts.app')
+@extends(Config::get('marrs-blog.template.admin'))
 
 @section('title')
     <h1><i class="fas fa-newspaper"></i> | POST</h1>

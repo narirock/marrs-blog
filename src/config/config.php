@@ -2,7 +2,7 @@
 
 return [
     "template" => [
-        "admin" => "marrs-blog::admin.layouts.template",
+        "admin" => "marrs-blog::admin.layouts.app",
         "front" => "marrs-blog::front.template"
     ],
     //variaveis para meta tags da index do blog
