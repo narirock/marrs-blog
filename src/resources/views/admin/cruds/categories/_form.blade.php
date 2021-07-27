@@ -1,3 +1,5 @@
+@include("marrs-blog::admin.partials._error")
+
 <div class="form-group">
     {!! Form::label('name', 'Nome') !!}
     {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Nome', 'onkeyup' => "setslug(this.value, 'slug')"]) !!}

@@ -5,6 +5,7 @@ namespace Marrs\MarrsBlog\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Http\Controllers\Controller;
+use Marrs\MarrsBlog\Http\Requests\CategoryRequest;
 use Marrs\MarrsBlog\Models\Category;
 
 class CategoryController extends Controller
@@ -51,7 +52,7 @@ class CategoryController extends Controller
      * @param  Request $request
      * @return Response
      */
-    public function store(Request $request)
+    public function store(CategoryRequest $request)
     {
 
         $category = $this->category->create([
@@ -100,7 +101,7 @@ class CategoryController extends Controller
      * @param  Request $request
      * @return Response
      */
-    public function update($id, Request $request)
+    public function update($id, CategoryRequest $request)
     {
         $category = $this->category->find($id);
 
