@@ -25,7 +25,7 @@ class MarrsBlogServiceProvider extends ServiceProvider
 
         $this->publishes([
             __DIR__ . '/config/config.php' => config_path('marrs-blog.php')
-        ], 'marrs-blog');
+        ], 'marrs-blog-config');
 
         $this->loadViewComponentsAs('marrs-blog-posts', [
             LastRow::class,
@@ -35,6 +35,10 @@ class MarrsBlogServiceProvider extends ServiceProvider
         $this->loadViewComponentsAs('marrs-blog-categories', [
             Widget::class
         ]);
+
+        $this->publishes([
+            __DIR__ . '/public' => public_path('vendor/marrs-blog'),
+        ], 'marrs-blog-assets');
     }
 
     public function register()

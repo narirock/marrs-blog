@@ -35,6 +35,9 @@
     </div>
 
     @stack('modals')
+
+    <script src="/vendor/marrs-blog/js/admin.js"></script>
+
     @stack('scripts')
 </body>
 
