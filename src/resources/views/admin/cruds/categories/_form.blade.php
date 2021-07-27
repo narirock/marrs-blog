@@ -26,7 +26,7 @@
     <div class="col col-md-6">
         <div class="form-group">
             {!! Form::label('category_id', 'Categoria Pai') !!}
-            {!! Form::select('category_id', $categories, null, ['class' => 'form-control']) !!}
+            {!! Form::select('category_id', $categories, null, ['class' => 'form-control', 'placeholder' => 'Nenhuma']) !!}
         </div>
 
         <div class="form-group">

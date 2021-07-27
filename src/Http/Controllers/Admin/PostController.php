@@ -7,6 +7,7 @@ use Illuminate\Http\Response;
 use App\Http\Controllers\Controller;
 use Marrs\MarrsBlog\Models\Category;
 use Marrs\MarrsBlog\Models\Post;
+use Marrs\MarrsBlog\Http\Requests\PostRequest;
 
 class PostController extends Controller
 {
@@ -76,7 +77,7 @@ class PostController extends Controller
         return view('marrs-blog::admin.cruds.posts.create', compact('categories', 'status'));
     }
 
-    public function store(Request $request)
+    public function store(PostRequest $request)
     {
 
         if ($request->image) {
@@ -112,7 +113,7 @@ class PostController extends Controller
         return view('marrs-blog::admin.cruds.posts.edit', compact('post', 'categories', 'status'));
     }
 
-    public function update($id, Request $request)
+    public function update($id, PostRequest $request)
     {
         $post = $this->post->find($id);
         $post->update([
@@ -146,7 +147,7 @@ class PostController extends Controller
 
     public function uploadfile($file)
     {
-        $destinationPath = 'storage/uploads/' . auth()->user()->id . '/posts/';
+        $destinationPath = 'storage/uploads/blog/posts/';
         if (in_array($file->extension(), $this->extensions)) {
             $size  = $file->getSize();
             $narq = explode(".", $file->getClientOriginalName());

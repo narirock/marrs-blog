@@ -1,7 +1,7 @@
+@include("marrs-blog::admin.partials._error")
+
 <div class="row">
     <div class="col-md-8 col-sm-8 col-xs-12">
-
-
         @component('marrs-blog::admin.partials.painel')
             @slot('title')
                 <h3>Título da publicação</h3>
@@ -37,12 +37,12 @@
 
         <!--
             @component('marrs-blog::admin.partials.painel')
-                        @slot('title')
-                                        <h3>Campos Adicionais</h3>
-                        @endslot
-                        @slot('body')
+                                                                                                                                                        @slot('title')
+                                                                                                                                                                                                                                                                                                        <h3>Campos Adicionais</h3>
+                                                                                                                                                        @endslot
+                                                                                                                                                        @slot('body')
 
-                        @endslot
+                                                                                                                                                        @endslot
         @endcomponent
         !-->
 

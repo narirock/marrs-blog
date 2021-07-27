@@ -136,13 +136,12 @@ class CategoryController extends Controller
     public function listnotself($id = null)
     {
         $categories = $this->category->where('id', '<>', $id)->orderby('name')->pluck("name", "id");
-        $categories->prepend('Nenhuma');
         return $categories;
     }
 
     public function uploadfile($file)
     {
-        $destinationPath = 'storage/uploads/' . auth()->user()->id . '/categories/';
+        $destinationPath = 'storage/uploads/blog/categories/';
         if (in_array($file->extension(), $this->extensions)) {
             $size  = $file->getSize();
             $narq = explode(".", $file->getClientOriginalName());

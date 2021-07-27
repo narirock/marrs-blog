@@ -22,9 +22,9 @@
                         <tr>
                             <td>{{ $category->name }}</td>
                             @if ($category->category)
-                                <td>{{ $category->category['name'] }}</td>
+                                <td>{{ $category->category->name }}</td>
                             @else
-                                <td class="text-center"> - </td>
+                                <td> - </td>
                             @endif
                             <td>
                                 <a href="{{ route('admin.blog.categories.edit', $category->id) }}"

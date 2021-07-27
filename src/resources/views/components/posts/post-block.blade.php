@@ -5,8 +5,8 @@
                 aria-label="[Texto para imagem]"></figure>
         </a>
         <div class="blog-category">
-            <a href="/blog/?category={{ $post->category->id }}" class="btn btn-primary btn-sm"
-                title="{{ $post->category->name }}">{{ $post->category->name }}</a>
+            <a href="/blog/?category={{ @$post->category->id }}" class="btn btn-primary btn-sm"
+                title="{{ @$post->category->name }}">{{ @$post->category->name }}</a>
         </div>
         <div class="card-body">
             <h4 class="card-title">{!! $post->title !!}</h4>
