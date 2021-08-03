@@ -3,8 +3,9 @@
 namespace Marrs\MarrsBlog;
 
 use Illuminate\Support\ServiceProvider;
-use Marrs\MarrsBlog\Views\Components\Category\Widget;
+use Marrs\MarrsBlog\Console\Commands\Install;
 use Marrs\MarrsBlog\Views\Components\Posts\LastRow;
+use Marrs\MarrsBlog\Views\Components\Category\Widget;
 use Marrs\MarrsBlog\Views\Components\Posts\PostBlock;
 
 class MarrsBlogServiceProvider extends ServiceProvider
@@ -39,9 +40,19 @@ class MarrsBlogServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/public' => public_path('vendor/marrs-blog'),
         ], 'marrs-blog-assets');
+
+
+        $this->loadCommands();
     }
 
     public function register()
     {
+    }
+
+    protected function loadCommands()
+    {
+        $this->commands([
+            Install::class,
+        ]);
     }
 }
