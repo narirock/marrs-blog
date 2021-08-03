@@ -8,5 +8,6 @@ return [
     //variaveis para meta tags da index do blog
     "name" => env('APP_NAME') . " - Blog",
     "description" => "Descrição pagina geral do blog",
-    "seo_image" => env('APP_URL') . "/site/images/seo.png"
+    "seo_image" => env('APP_URL') . "/site/images/seo.png",
+    "guard" => "" //selecione a guard que protege as rotas de admin
 ];
