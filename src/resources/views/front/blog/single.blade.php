@@ -1,21 +1,21 @@
 @extends(Config::get('marrs-blog.template.front'))
 @section('seo')
     <!-- Primary Meta Tags -->
-    <title>Inglês com Café - {!! $post->title !!}</title>
-    <meta name="title" content="Inglês com Café - {!! $post->title !!}">
+    <title>{{ env('APP_NAME') }} - {!! $post->title !!}</title>
+    <meta name="title" content="{{ env('APP_NAME') }} - {!! $post->title !!}">
     <meta name="description" content="{!! $post->excerpt !!}">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ env('APP_URL') }}/">
-    <meta property="og:title" content="Inglês com Café - {!! $post->title !!}">
+    <meta property="og:title" content="{{ env('APP_NAME') }} - {!! $post->title !!}">
     <meta property="og:description" content="{!! $post->excerpt !!}">
     <meta property="og:image" content="{{ env('APP_URL') }}/site/images/seo.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="{{ env('APP_URL') }}/">
-    <meta property="twitter:title" content="Inglês com Café - {!! $post->title !!}">
+    <meta property="twitter:title" content="{{ env('APP_NAME') }} - {!! $post->title !!}">
     <meta property="twitter:description" content="{!! $post->excerpt !!}">
     <meta property="twitter:image" content="{{ env('APP_URL') }}/site/images/seo.png">
     <!-- Canonical URL -->
@@ -77,7 +77,7 @@
                                 </a>
                                 <!-- Sharingbutton Twitter -->
                                 <a class="resp-sharing-button__link"
-                                    href="https://twitter.com/intent/tweet/?text=Confira essa matéria do Inglês com Café..&amp;url={{ env('APP_URL') }}"
+                                    href="https://twitter.com/intent/tweet/?text=Confira essa matéria do {{ env('APP_NAME') }}..&amp;url={{ env('APP_URL') }}"
                                     target="_blank" rel="noopener" aria-label="">
                                     <div
                                         class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
@@ -92,7 +92,7 @@
                                 </a>
                                 <!-- Sharingbutton E-Mail -->
                                 <a class="resp-sharing-button__link"
-                                    href="mailto:?subject=Confira essa matéria do Inglês com Café..&amp;body={{ env('APP_URL') }}"
+                                    href="mailto:?subject=Confira essa matéria do {{ env('APP_NAME') }}..&amp;body={{ env('APP_URL') }}"
                                     target="_self" rel="noopener" aria-label="">
                                     <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small">
                                         <div aria-hidden="true"
@@ -106,7 +106,7 @@
                                 </a>
                                 <!-- Sharingbutton LinkedIn -->
                                 <a class="resp-sharing-button__link"
-                                    href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ env('APP_URL') }}&amp;title=Confira essa matéria do Inglês com Café..&amp;summary=Confira essa matéria do Inglês com Café..&amp;source={{ env('APP_URL') }}"
+                                    href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ env('APP_URL') }}&amp;title=Confira essa matéria do {{ env('APP_NAME') }}..&amp;summary=Confira essa matéria do {{ env('APP_NAME') }}..&amp;source={{ env('APP_URL') }}"
                                     target="_blank" rel="noopener" aria-label="">
                                     <div
                                         class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small">
@@ -121,7 +121,7 @@
                                 </a>
                                 <!-- Sharingbutton WhatsApp -->
                                 <a class="resp-sharing-button__link"
-                                    href="whatsapp://send?text=Confira essa matéria do Inglês com Café..%20{{ env('APP_URL') }}"
+                                    href="whatsapp://send?text=Confira essa matéria do {{ env('APP_NAME') }}..%20{{ env('APP_URL') }}"
                                     target="_blank" rel="noopener" aria-label="">
                                     <div
                                         class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--small">
