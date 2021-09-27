@@ -28,6 +28,6 @@ class CreatePostReadsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('post_reads');
+        Schema::dropIfExists('blog_post_reads');
     }
 }
