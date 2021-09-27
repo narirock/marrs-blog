@@ -2,10 +2,10 @@
 
 namespace Marrs\MarrsBlog\Http\Controllers\Front;
 
-use Marrs\MarrsBlog\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Marrs\MarrsBlog\Models\Post;
-//use App\Models\PostRead;
+use Marrs\MarrsBlog\Models\PostRead;
+use Marrs\MarrsBlog\Http\Controllers\Controller;
 
 class BlogController extends Controller
 {
@@ -48,13 +48,13 @@ class BlogController extends Controller
 
     public function post(Request $request)
     {
-        //$ip = Request::ip();
+        $ip = @$request->ip();
         $post = Post::where('slug', $request->slug)->first();
 
-        /*PostRead::create([
+        PostRead::create([
             'ip' => $ip,
-            'post_id' => $post->id
-        ]);*/
+            'blog_posts_id' => $post->id
+        ]);
 
         //gerenciando posts relacionados
         $relateds = [];

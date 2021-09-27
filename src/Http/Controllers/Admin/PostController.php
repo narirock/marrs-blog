@@ -84,6 +84,8 @@ class PostController extends Controller
             $destaque = $this->uploadfile($request->image);
         }
 
+
+
         $this->post->create([
             "title"     => $request->title,
             "body"      => $request->body,
@@ -92,7 +94,8 @@ class PostController extends Controller
             "status"    => $request->status,
             "publish"    => $request->publish,
             "category_id" => $request->category_id,
-            "featured" => $request->featured == 'on' ? true : false,
+            "featured" => $request->featured == 1 ? true : false,
+            "restrict" => $request->restrict == 1 ? true : false,
             "meta_description" => $request->meta_description,
             "meta_keywords" => $request->meta_keywords,
             "seo_title" => $request->seo_title,
@@ -124,7 +127,8 @@ class PostController extends Controller
             "status"    => $request->status,
             "publish"    => $request->publish,
             "category_id" => $request->category_id,
-            "featured" => $request->featured == 'on' ? true : false,
+            "featured" => $request->featured == 1 ? true : false,
+            "restrict" => $request->restrict == 1 ? true : false,
             "meta_description" => $request->meta_description,
             "meta_keywords" => $request->meta_keywords,
             "seo_title" => $request->seo_title,

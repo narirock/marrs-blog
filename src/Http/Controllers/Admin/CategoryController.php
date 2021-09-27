@@ -61,7 +61,7 @@ class CategoryController extends Controller
             "slug"          => $request->slug,
             "image"         => $request->image,
             "category_id"   => $request->category_id,
-            "enable"        => $request->enable == '1' ? true : false
+            "enable"        => $request->enable == '1' ? true : false,
         ]);
 
         if ($request->image) {

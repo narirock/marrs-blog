@@ -37,12 +37,12 @@
 
         <!--
             @component('marrs-blog::admin.partials.painel')
-                                                                                                                                                        @slot('title')
-                                                                                                                                                                                                                                                                                                        <h3>Campos Adicionais</h3>
-                                                                                                                                                        @endslot
-                                                                                                                                                        @slot('body')
+                                                                                                                                                                                            @slot('title')
+                                                                                                                                                                                                                                                                                                                                                                                <h3>Campos Adicionais</h3>
+                                                                                                                                                                                            @endslot
+                                                                                                                                                                                            @slot('body')
 
-                                                                                                                                                        @endslot
+                                                                                                                                                                                            @endslot
         @endcomponent
         !-->
 
@@ -75,7 +75,11 @@
 
                 <div class="form-group">
                     {!! Form::label('featured', 'Destacado') !!}
-                    {!! Form::checkbox('featured', null, ['class' => 'form-control']) !!}
+                    {!! Form::checkbox('featured', 1, ['class' => 'form-control', 'checked' => @$post->featured ? true : false]) !!}
+                </div>
+                <div class="form-group">
+                    {!! Form::label('restrict', 'Restrito') !!}
+                    {!! Form::checkbox('restrict', 1, ['class' => 'form-control', 'checked' => @$post->restrict ? true : false]) !!}
                 </div>
             @endslot
         @endcomponent

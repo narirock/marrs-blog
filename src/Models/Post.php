@@ -20,6 +20,7 @@ class Post extends Model
         "publish",
         "category_id",
         "featured",
+        "restrict",
         "meta_description",
         "meta_keywords",
         "seo_title",
@@ -42,11 +43,11 @@ class Post extends Model
 
     public function author()
     {
-        return $this->belongsTo('App\Models\User', 'author_id');
+        return $this->belongsTo('Marrs\MarrsAdmin\Models\Admin', 'author_id');
     }
 
     public function access()
     {
-        return $this->hasMany('App\Models\PostRead', 'post_id');
+        return $this->hasMany('Marrs\MarrsBlog\Models\PostRead', 'blog_post_id');
     }
 }
