@@ -8,7 +8,7 @@ class PostRead extends Model
 {
     protected $table = "blog_post_reads";
 
-    protected $fillable = ['blog_posts_id', 'ip'];
+    protected $fillable = ['blog_post_id', 'ip'];
 
     public function posts()
     {

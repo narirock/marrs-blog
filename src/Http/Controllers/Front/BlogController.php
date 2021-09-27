@@ -53,7 +53,7 @@ class BlogController extends Controller
 
         PostRead::create([
             'ip' => $ip,
-            'blog_posts_id' => $post->id
+            'blog_post_id' => $post->id
         ]);
 
         //gerenciando posts relacionados

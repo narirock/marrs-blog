@@ -15,7 +15,7 @@ class CreatePostReadsTable extends Migration
     {
         Schema::create('blog_post_reads', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('blog_posts_id')->nullable();
+            $table->integer('blog_post_id')->nullable();
             $table->string('ip')->nullable();
             $table->timestamps();
         });

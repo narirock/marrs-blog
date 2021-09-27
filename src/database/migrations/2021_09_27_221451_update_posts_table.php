@@ -25,7 +25,7 @@ class UpdatePostsTable extends Migration
      */
     public function down()
     {
-        Schema::table('blog_postss', function (Blueprint $table) {
+        Schema::table('blog_posts', function (Blueprint $table) {
             $table->dropColumn(['restrict']);
         });
     }
