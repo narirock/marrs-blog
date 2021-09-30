@@ -20,7 +20,7 @@ if (!Config::get('marrs-blog.disable.admin.routes')) {
         }
     );
 }
-if (!Config::get('marrs-blog.disable.frontend.routes')) {
+if (!Config::get('marrs-blog.disable.front.routes')) {
     Route::group(['prefix' => 'blog', 'middleware' => ['web']], function () {
         Route::get('/', 'Marrs\MarrsBlog\Http\Controllers\Front\BlogController@index')->name('blog.index');
         Route::get('/post/{slug}', 'Marrs\MarrsBlog\Http\Controllers\Front\BlogController@post')->name('blog.post');
