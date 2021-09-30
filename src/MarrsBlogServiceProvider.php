@@ -2,6 +2,7 @@
 
 namespace Marrs\MarrsBlog;
 
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 use Marrs\MarrsBlog\Console\Commands\Install;
 use Marrs\MarrsBlog\Views\Components\Posts\LastRow;
@@ -12,6 +13,8 @@ class MarrsBlogServiceProvider extends ServiceProvider
 {
     public function boot()
     {
+        Paginator::useBootstrap();
+
         $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
 
         $this->loadViewsFrom(__DIR__ . '/resources/views', 'marrs-blog');

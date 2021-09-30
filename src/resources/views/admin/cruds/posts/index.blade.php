@@ -80,7 +80,7 @@
                 </tbody>
             </table>
 
-            {{-- $posts->appends(request()->query())->links('marrs-blog::admin.layouts.components.paginator') --}}
+            {{ $posts->appends(request()->query())->links() }}
         </div>
     </div>
 @endsection
