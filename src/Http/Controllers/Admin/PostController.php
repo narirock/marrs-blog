@@ -146,7 +146,7 @@ class PostController extends Controller
     public function destroy($id)
     {
         $this->post->find($id)->delete();
-        return redirect()->route('posts.index');
+        return redirect()->route('admin.blog.posts.index');
     }
 
     public function uploadfile($file)
