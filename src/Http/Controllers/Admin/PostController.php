@@ -99,7 +99,8 @@ class PostController extends Controller
             "meta_description" => $request->meta_description,
             "meta_keywords" => $request->meta_keywords,
             "seo_title" => $request->seo_title,
-            "image"     => @$destaque
+            "image"     => @$destaque,
+            "image_label" => $request->image_label,
 
         ]);
 
@@ -132,6 +133,7 @@ class PostController extends Controller
             "meta_description" => $request->meta_description,
             "meta_keywords" => $request->meta_keywords,
             "seo_title" => $request->seo_title,
+            "image_label" => $request->image_label,
         ]);
 
         if ($request->image) {

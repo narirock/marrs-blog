@@ -24,7 +24,8 @@ class Post extends Model
         "meta_description",
         "meta_keywords",
         "seo_title",
-        "image"
+        "image",
+        "image_label"
     ];
 
     public static  function boot()

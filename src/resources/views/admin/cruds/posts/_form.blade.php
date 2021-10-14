@@ -30,19 +30,19 @@
             @endslot
             @slot('body')
                 <div class="form-group">
-                    {!! Form::textarea('excerpt', null, ['class' => 'form-control', 'placeholder' => 'Pequena descrição desta publicação', 'rows' => '3']) !!}
+                    {!! Form::textarea('excerpt', null, ['class' => 'form-control editor', 'placeholder' => 'Pequena descrição desta publicação', 'rows' => '3']) !!}
                 </div>
             @endslot
         @endcomponent
 
         <!--
             @component('marrs-blog::admin.partials.painel')
-                                                                                                                                                                                            @slot('title')
-                                                                                                                                                                                                                                                                                                                                                                                <h3>Campos Adicionais</h3>
-                                                                                                                                                                                            @endslot
-                                                                                                                                                                                            @slot('body')
+                                                                                                                                                                                                                                                                        @slot('title')
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <h3>Campos Adicionais</h3>
+                                                                                                                                                                                                                                                                        @endslot
+                                                                                                                                                                                                                                                                        @slot('body')
 
-                                                                                                                                                                                            @endslot
+                                                                                                                                                                                                                                                                        @endslot
         @endcomponent
         !-->
 
@@ -97,7 +97,10 @@
                     @endif
                     <div class="form-group">
                         {!! Form::file('image', null, ['class' => 'form-control']) !!}
+                        <br><br>
+                        {!! Form::text('image_label', null, ['class' => 'form-control', 'placeholder' => 'label da imagem']) !!}
                     </div>
+
                 </div>
             @endslot
         @endcomponent
