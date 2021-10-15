@@ -25,7 +25,7 @@ class Post extends Model
         "meta_keywords",
         "seo_title",
         "image",
-        "image_label"
+        "image_label",
     ];
 
     public static  function boot()
@@ -33,7 +33,7 @@ class Post extends Model
         parent::boot();
 
         static::creating(function ($model) {
-            $model->author_id = auth()->check() ? auth()->user()->id : null;
+            $model->author_id = auth('admin')->check() ? auth('admin')->user()->id : null;
         });
     }
 
