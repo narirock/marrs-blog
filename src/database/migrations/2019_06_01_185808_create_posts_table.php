@@ -29,6 +29,7 @@ class CreatePostsTable extends Migration
             $table->enum('status', ['PUBLISHED', 'DRAFT', 'PENDING'])->default('DRAFT');
             $table->boolean('featured')->default(0);
             $table->integer('excluder_id')->nullable();
+            $table->text('image_label')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
